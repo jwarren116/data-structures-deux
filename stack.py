@@ -25,7 +25,12 @@ class Stack(object):
         self.top = item
 
     def pop(self):
-        pass
+        try:
+            pop_item = self.top
+            self.top = pop_item.next_item
+            return pop_item.value
+        except AttributeError:
+            raise ValueError('No items in stack')
 
     def peek(self):
         return self.top.value
