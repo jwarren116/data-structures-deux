@@ -28,4 +28,4 @@ class Stack(object):
         pass
 
     def peek(self):
-        return self.top
+        return self.top.value
