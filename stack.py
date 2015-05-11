@@ -20,15 +20,15 @@ class Stack(object):
         self.top = top
 
     def push(self, value):
-        item = Item(value)
-        item.next_item = self.top
-        self.top = item
+        self.item = Item(value)
+        self.item.next_item = self.top
+        self.top = self.item
 
     def pop(self):
         try:
-            pop_item = self.top
-            self.top = pop_item.next_item
-            return pop_item.value
+            self.pop_item = self.top
+            self.top = self.pop_item.next_item
+            return self.pop_item.value
         except AttributeError:
             raise ValueError('No items in stack')
 
