@@ -29,3 +29,16 @@ def test_empty_stack_peek():
     stack = Stack()
     with pytest.raises(ValueError):
         stack.peek()
+
+
+def test_multiple_stacks():
+    stack1 = Stack()
+    stack2 = Stack()
+    stack1.push("1bacon")
+    stack2.push("2bacon")
+    stack2.push("2steak")
+    stack1.push("1steak")
+    assert stack2.pop() == "2steak"
+    assert stack1.pop() == "1steak"
+    stack2.push("2cheese")
+    assert stack1.pop() == "1bacon"
