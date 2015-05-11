@@ -33,4 +33,7 @@ class Stack(object):
             raise ValueError('No items in stack')
 
     def peek(self):
-        return self.top.value
+        try:
+            return self.top.value
+        except AttributeError:
+            raise ValueError('No items in stack')
