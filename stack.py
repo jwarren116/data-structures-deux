@@ -19,11 +19,13 @@ class Stack(object):
     def __init__(self, top=None):
         self.top = top
 
-    def push(self, item):
-        pass
+    def push(self, value):
+        item = Item(value)
+        item.next_item = self.top
+        self.top = item
 
     def pop(self):
         pass
 
     def peek(self):
-        pass
+        return self.top
