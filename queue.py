@@ -24,9 +24,12 @@ class Queue(object):
         pass
 
     def dequeue(self):
-        self.old_front = self.front
-        self.front = self.front.behind
-        return self.old_front.value
+        try:
+            self.old_front = self.front
+            self.front = self.front.behind
+            return self.old_front.value
+        except AttributeError:
+            raise ValueError('No items in queue')
 
     def peek(self):
         try:
