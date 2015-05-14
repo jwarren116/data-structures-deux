@@ -24,7 +24,9 @@ class Queue(object):
         pass
 
     def dequeue(self):
-        pass
+        self.old_front = self.front
+        self.front = self.front.behind
+        return self.old_front.value
 
     def peek(self):
         try:
