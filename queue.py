@@ -3,7 +3,7 @@
 '''Implementation of a simple queue data structure.
 The queue has `enqueue`, `dequeue`, and `peek` methods.
 Items in the queue have `value` and `behind` attributes.
-The queue has a `front` attribute.
+The queue has `front` and `back` attributes.
 '''
 
 
@@ -17,8 +17,9 @@ class Item(object):
 
 
 class Queue(object):
-    def __init__(self, front=None):
+    def __init__(self, front=None, back=None):
         self.front = front
+        self.back = back
 
     def enqueue(self, value):
         pass
