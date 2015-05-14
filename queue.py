@@ -27,4 +27,7 @@ class Queue(object):
         pass
 
     def peek(self):
-        pass
+        try:
+            return self.front.value
+        except AttributeError:
+            raise ValueError('No items in queue')
