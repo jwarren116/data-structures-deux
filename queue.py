@@ -18,7 +18,7 @@ class Item(object):
 
 class Queue(object):
     def __init__(self, front=None):
-        pass
+        self.front = front
 
     def enqueue(self, value):
         pass
