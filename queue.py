@@ -22,7 +22,9 @@ class Queue(object):
         self.back = back
 
     def enqueue(self, value):
-        pass
+        self.item = Item(value)
+        self.back.behind = self.item
+        self.back = self.item
 
     def dequeue(self):
         try:
