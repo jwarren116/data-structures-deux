@@ -18,8 +18,11 @@ class Hash(object):
         for i in range(size):
             self.table.append(list())
 
-    def hash(self):
-        pass
+    def hash(self, key):
+        hash_value = 0
+        for i in key:
+            hash_value += ord(key)
+        return hash_value % len(self.table)
 
     def get(self):
         pass
