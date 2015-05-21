@@ -2,7 +2,7 @@
 
 '''Implementation of a simple hash table.
 The table has `hash`, `get` and `set` methods.
-The hash function uses a very basic hash algorithm to insert the value 
+The hash function uses a very basic hash algorithm to insert the value
 into the table.
 '''
 
@@ -13,8 +13,10 @@ class HashItem(object):
 
 
 class Hash(object):
-    def __init__(self):
-        pass
+    def __init__(self, size=1024):
+        self.table = []
+        for i in range(size):
+            self.table.append(list())
 
     def hash(self):
         pass
