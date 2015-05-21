@@ -22,9 +22,14 @@ class Queue(object):
         self.back = back
 
     def enqueue(self, value):
-        self.item = Item(value)
-        self.back.behind = self.item
-        self.back = self.item
+        try:
+            self.item = Item(value)
+            self.back.behind = self.item
+            self.back = self.item
+        except AttributeError:
+            self.item = Item(value)
+            self.front = self.item
+            self.back = self.item
 
     def dequeue(self):
         try:
