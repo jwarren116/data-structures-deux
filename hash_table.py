@@ -25,8 +25,13 @@ class Hash(object):
             hash_value += ord(key)
         return hash_value % len(self.table)
 
-    def get(self):
-        pass
+    def get(self, key):
+        hashed_key = self.hash(key)
+        for k in self.table[hashed_key]:
+            if k[0] == key:
+                return k[1]
+        else:
+            raise KeyError('Value not found')
 
     def set(self):
         pass
