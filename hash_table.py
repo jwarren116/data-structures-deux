@@ -8,8 +8,9 @@ into the table.
 
 
 class HashItem(object):
-    def __init__(self):
-        pass
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
 
 
 class Hash(object):
