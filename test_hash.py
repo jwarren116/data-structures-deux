@@ -42,7 +42,7 @@ def test_word_file():
 def test_non_item():
     ht = HashTable()
     ht.set('coffee', 'coffee')
-    with pytest.raises(IndexError):
+    with pytest.raises(KeyError):
         ht.get('milk')
 
 
