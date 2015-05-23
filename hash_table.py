@@ -13,7 +13,7 @@ class HashItem(object):
         self.value = value
 
 
-class Hash(object):
+class HashTable(object):
     def __init__(self, size=1024):
         self.table = []
         for i in range(size):
@@ -22,7 +22,7 @@ class Hash(object):
     def hash(self, key):
         hash_value = 0
         for i in key:
-            hash_value += ord(key)
+            hash_value += ord(i)
         return hash_value % len(self.table)
 
     def get(self, key):
@@ -35,4 +35,8 @@ class Hash(object):
 
     def set(self, key, val):
         hashed_key = self.hash(key)
-        self.table[hashed_key].append((key, val))
+        for k in self.table[hashed_key]:
+            if k[0] == key:
+                self.table[hashed_key][k] = (key, val)
+        else:
+            self.table[hashed_key].append((key, val))
