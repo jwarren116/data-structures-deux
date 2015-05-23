@@ -21,9 +21,12 @@ class HashTable(object):
 
     def hash(self, key):
         hash_value = 0
-        for i in key:
-            hash_value += ord(i)
-        return hash_value % len(self.table)
+        try:
+            for i in key:
+                hash_value += ord(i)
+            return hash_value % len(self.table)
+        except TypeError:
+            raise TypeError('Please input a valid string for `key`')
 
     def get(self, key):
         hashed_key = self.hash(key)
