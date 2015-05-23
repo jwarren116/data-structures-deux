@@ -50,3 +50,9 @@ def test_non_bucket():
     ht = HashTable()
     with pytest.raises(IndexError):
         ht.table[1025]
+
+
+def test_non_string():
+    ht = HashTable()
+    with pytest.raises(TypeError):
+        ht.set(13, 13)
