@@ -33,5 +33,6 @@ class Hash(object):
         else:
             raise KeyError('Value not found')
 
-    def set(self):
-        pass
+    def set(self, key, val):
+        hashed_key = self.hash(key)
+        self.table[hashed_key].append((key, val))
