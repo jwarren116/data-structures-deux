@@ -56,3 +56,15 @@ def test_non_string():
     ht = HashTable()
     with pytest.raises(TypeError):
         ht.set(13, 13)
+
+
+def test_multiple_tables():
+    ht1 = HashTable()
+    ht2 = HashTable()
+    ht1.set('coffee', 'coffee')
+    ht1.set('eggs', 'eggs')
+    ht2.set('bacon', 'bacon')
+    with pytest.raises(KeyError):
+        ht1.get('bacon')
+    with pytest.raises(KeyError):
+        ht2.get('coffee')
